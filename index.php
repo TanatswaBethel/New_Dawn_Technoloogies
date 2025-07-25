@@ -7,7 +7,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>New Dawn Technologies</title>
-    <link href="NDT_LOGO_bg.png" rel="icon" type="image/png"> <!-- Favicon -->
+  <link href="NDT_LOGO_bg.png" rel="icon" type="image/png"> <!-- Favicon -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
@@ -127,81 +127,46 @@
   <section class="container py-5">
     <h2 class="text-center orange mb-4">Check Out Our Packages</h2>
     <div class="row g-4">
-      <div class="col-md-3">
-        <div class="package-card h-100">
-          <h5 class="orange">Basic</h5>
-          <p class="package-price">USD 80</p>
-          <ul>
-            <li>3 Pages Maximum</li>
-            <li>Mobile Responsive</li>
-            <li>Search Engine Optimised</li>
-            <li>Hyperlinks Integration</li>
-            <li>Google Maps Integration</li>
-            <li>Copywriting</li>
-            <li>High Quality Images</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="package-card h-100">
-          <h5 class="orange">Standard</h5>
-          <p class="package-price">USD 115</p>
-          <ul>
-            <li>Free Domain (.co.zw)</li>
-            <li>1 Month Hosting</li>
-            <li>8 Pages Maximum</li>
-            <li>Free SSL Certificate</li>
-            <li>Control Panel</li>
-            <li>Mobile Responsive</li>
-            <li>Search Engine Optimised</li>
-            <li>Hyperlinks Integration</li>
-            <li>Google Maps Integration</li>
-            <li>Copywriting</li>
-            <li>High Quality Images</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="package-card h-100">
-          <h5 class="orange">Premium</h5>
-          <p class="package-price">USD 240</p>
-          <ul>
-            <li>Free Domain (.co.zw)</li>
-            <li>5 Month Hosting</li>
-            <li>25 Pages Maximum</li>
-            <li>Better Overall Design</li>
-            <li>Mobile Responsive</li>
-            <li>Free SSL Certificate</li>
-            <li>Control Panel</li>
-            <li>Search Engine Optimised</li>
-            <li>Hyperlinks Integration</li>
-            <li>Google Analytics</li>
-            <li>Google Maps Integration</li>
-            <li>Copywriting</li>
-            <li>High Quality Images</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="package-card h-100">
-          <h5 class="orange">E-Commerce</h5>
-          <p class="package-price">USD 480</p>
-          <ul>
-            <li>Free Domain (.co.zw)</li>
-            <li>Online Payments</li>
-            <li>12 Month Free Hosting</li>
-            <li>Unlimited Pages</li>
-            <li>Free SSL Certificate</li>
-            <li>Control Panel</li>
-            <li>Better Overall Design</li>
-            <li>Mobile Responsive</li>
-            <li>Search Engine Optimised</li>
-            <li>Hyperlinks Integration</li>
-            <li>Google Analytics</li>
-            <li>Google Maps Integration</li>
-          </ul>
-        </div>
-      </div>
+      <?php
+      $packages = [
+        ["Basic", "USD 80", [
+          "3 Pages Maximum", "Mobile Responsive", "Search Engine Optimised", "Hyperlinks Integration",
+          "Google Maps Integration", "Copywriting", "High Quality Images"
+        ]],
+        ["Standard", "USD 115", [
+          "Free Domain (.co.zw)", "1 Month Hosting", "8 Pages Maximum", "Free SSL Certificate",
+          "Control Panel", "Mobile Responsive", "Search Engine Optimised", "Hyperlinks Integration",
+          "Google Maps Integration", "Copywriting", "High Quality Images"
+        ]],
+        ["Premium", "USD 240", [
+          "Free Domain (.co.zw)", "5 Month Hosting", "25 Pages Maximum", "Better Overall Design",
+          "Mobile Responsive", "Free SSL Certificate", "Control Panel", "Search Engine Optimised",
+          "Hyperlinks Integration", "Google Analytics", "Google Maps Integration", "Copywriting", "High Quality Images"
+        ]],
+        ["E-Commerce", "USD 480", [
+          "Free Domain (.co.zw)", "Online Payments", "12 Month Free Hosting", "Unlimited Pages",
+          "Free SSL Certificate", "Control Panel", "Better Overall Design", "Mobile Responsive",
+          "Search Engine Optimised", "Hyperlinks Integration", "Google Analytics", "Google Maps Integration"
+        ]]
+      ];
+
+      foreach ($packages as $pack) {
+        echo '<div class="col-md-3">
+                <div class="package-card h-100 d-flex flex-column">
+                  <h5 class="orange">' . $pack[0] . '</h5>
+                  <p class="package-price">' . $pack[1] . '</p>
+                  <ul>';
+        foreach ($pack[2] as $item) {
+          echo '<li>' . $item . '</li>';
+        }
+        echo    '</ul>
+                  <div class="mt-auto text-center">
+                    <a href="https://wa.me/263777233862?text=Good%20day%20I%20would%20like%20to%20hear%20more%20about%20your%20packages." class="btn btn-warning mt-3">Get Quote</a>
+                  </div>
+                </div>
+              </div>';
+      }
+      ?>
     </div>
   </section>
 
